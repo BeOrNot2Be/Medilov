@@ -1,0 +1,65 @@
+body {
+  background: #eeeeee;
+}
+
+.card {
+  border-radius: 2%;
+  width: 40rem;
+  text-align: center;
+  .table {
+    table-layout: fixed;
+    margin-bottom: 0;
+  }
+}
+#col-left {
+  border-bottom-left-radius: 2%;
+  border-top-left-radius: 2%;
+  background-color: #ff4538;
+  color: white;
+  #part-1 {
+    h1 {
+      font-size: 7rem;
+      margin-bottom: 0;
+    }
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+ 
+}
+#col-right {
+  #title {
+    #title-date {
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: rgb(255,255,255);
+      height: 3rem;
+      width: 3rem;
+      border-radius: 100%;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .inactive {
+    cursor: pointer;
+    &:hover {
+      border-radius: 10%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+  .active {
+    cursor: pointer;
+
+    border-radius: 10%;
+    background-color: #ff4538;
+    color: #ffffff;
+  }
+}
