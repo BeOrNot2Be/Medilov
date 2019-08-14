@@ -371,6 +371,7 @@ button:focus {
 }
 
 .stack-title-header{
+	opacity: 0;
 	float: left;
 	font-size: 2em;
 	margin: 0 auto 0 0;
@@ -501,7 +502,7 @@ button:focus {
 .move-items .is-selected .stack-title a span {
 	opacity: 0;
 	-webkit-transform: translate3d(0, -150%, 0);
-	transform: translate3d(0, -150%, 0);
+	transform: translate3d(0, -15 0%, 0);
 }
 
 .item {

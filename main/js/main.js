@@ -38,6 +38,7 @@
 		stacksWrapper = slider.querySelector('.stacks-wrapper'),
 		stacks = [].slice.call(stacksWrapper.children),
 		imghero = document.querySelector('.hero__back--mover'),
+		simagehero = document.querySelector('.hero'),
 		flkty, canOpen = true, canMoveHeroImage = true,
 		isFirefox = typeof InstallTrigger !== 'undefined',
 		win = { width: window.innerWidth, height: window.innerHeight };
@@ -87,13 +88,14 @@
 				ev.preventDefault();
 				if( classie.has(stack, 'is-selected') ) { // current stack
 					if( classie.has(bodyEl, 'view-full') ) { // stack is opened
-						var closeStack = function() {
+						/*var closeStack = function() {
 							classie.remove(bodyEl, 'move-items');
 							setTimeout(function() { 
 								classie.remove(mainHeader, 'cordrop-header-background');
 								stackHeader.innerHTML = '';
 								titleEl.style.display = 'inline-block'
 							}, 250);
+							console.log(stack)
 							stackHeader.style.opacity = '0';
 							stackHeader.style.transition = "opacity 0.25s linear 0s";
 							onEndTransition(slider, function() {
@@ -114,7 +116,7 @@
 						}
 						else {
 							closeStack();
-						}
+						}*/
 					}
 					else if( canOpen ) { // stack is closed
 						canMoveHeroImage = false;
@@ -123,14 +125,18 @@
 						bodyEl.style.height = stack.offsetHeight + 'px';
 						flkty.unbindDrag();
 						flkty.options.accessibility = false;
+						var gap = document.createElement("div");
+							gap.style.height = "100px";
 						setTimeout(function() { 
 							classie.add(mainHeader, 'cordrop-header-background');
 							stackHeader.innerHTML = titleEl.innerHTML;
 							titleEl.style.display = 'none';
+							stack.parentNode.insertBefore(gap, stack);
+							simagehero.style.opacity = '0';
+							simagehero.style.transition = "opacity 0.25s linear 0s";
+							stackHeader.style.opacity = '1';
+							stackHeader.style.transition = "opacity 0.25s linear 0s";
 						}, 300);
-						stackHeader.style.opacity = '1';
-						stackHeader.style.transition = "opacity 0.5s linear 0s";
-
 						stackHeader.addEventListener('click', function(ev) {
 							ev.preventDefault();
 							if( classie.has(stack, 'is-selected') ) { // current stack
@@ -141,7 +147,12 @@
 												classie.remove(mainHeader, 'cordrop-header-background');
 												stackHeader.innerHTML = '';
 												titleEl.style.display = 'inline-block';
+												gap.parentNode.removeChild(gap)
+												simagehero.style.opacity = '1';
+												simagehero.style.transition = "opacity 0.25s linear 0s";
 											}, 300);
+											stackHeader.style.opacity = '0';
+											stackHeader.style.transition = "opacity 0.25s linear 0s";
 											onEndTransition(slider, function() {
 												classie.remove(bodyEl, 'view-full');
 												bodyEl.style.height = '';
