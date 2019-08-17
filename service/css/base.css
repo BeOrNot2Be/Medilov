@@ -16,7 +16,8 @@ body {
 	min-height: 100vh;
 	color: #57585c;
 	color: var(--color-text);
-	background-color: var(--color-bg);
+	/*background-color: var(--color-bg);*/
+	background-color: #212121;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	padding-top: 10rem;
@@ -193,7 +194,8 @@ a:focus {
 
 .slideshow__deco {
 	grid-area: slide;
-	background: var(--color-deco);
+	/*background: var(--color-deco);*/
+	background: #353535;
 	width: 100%;
 	height: 80%;
 	align-self: center;
@@ -280,6 +282,7 @@ a:focus {
 	width: 100%;
 	position: relative;
 	z-index: 1000;
+	color: #ef5350;
 }
 
 .slide__number {
@@ -346,6 +349,7 @@ a:focus {
 
 .content__number {
 	font-weight: bold;
+	color:#ef5350;
 }
 
 .content__number::before {
@@ -432,7 +436,7 @@ a:focus {
 		min-height: 50px;
 	}
 	.slide__side {
-		color: var(--color-side);
+		color: #b8b8b8;
 		position: relative;
 		-webkit-writing-mode: vertical-rl;
 		writing-mode: vertical-rl;
