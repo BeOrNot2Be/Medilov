@@ -1,0 +1,6 @@
+[submodule "MEDILOV-back"]
+	path = MEDILOV-back
+	url = https://github.com/BeOrNot2Be/MEDILOV-back
+[submodule "MEDILOV-front"]
+	path = MEDILOV-front
+	url = https://github.com/BeOrNot2Be/MEDILOV-front
